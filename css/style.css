@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navLinkCont, .addPatientForm, .examForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.navLink {
+    text-decoration: none;
+    color: red;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+.navLink:hover {
+    transition: 1s;
+    color: black;
+    border: red 1px;
+    text-decoration: underline;
+}
