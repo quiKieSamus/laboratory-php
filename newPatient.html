@@ -14,14 +14,14 @@
     </div>
     <h1>Añade Paciente</h1>
     <div class="form">
-        <form action="php/newPatient.php" class="addPatientForm" method="post">
+        <form action="php/newPatient.php" class="addPatientForm" method="post" onsubmit="return validations();">
             <div>
                 <label for="name">Nombre</label> <br>
                 <input type="text" name="name" id="name">
             </div>
             <div>
                 <label for="birthday">Fecha de Nacimiento</label> <br>
-                <input type="date" name="birthday" id="birthday" required>
+                <input type="date" name="birthday" id="birthday" min="1903-01-01" required>
             </div>
             <div>
                 <label for="residence">Dirección</label> <br>
@@ -29,7 +29,7 @@
             </div>
             <div>
                 <label for="document">Documento de identidad</label> <br>
-                <input type="text" name="document" id="document">
+                <input type="text" name="document" id="document" pattern="^[0-9]*$">
             </div>
             <div>
                 <label for="cellphone">Número telefónico</label> <br>
@@ -40,7 +40,7 @@
                     <option value="0424">0424</option>
                     <option value="0412">0412</option>
                 </select>
-                <input type="text" name="cellphone" id="cellphone">
+                <input type="tel" name="cellphone" id="cellphone" pattern="[0-9]{7}">
             </div>
             <div>
                 <label for="email">Correo electrónico</label> <br>
@@ -62,5 +62,6 @@
             </div>
         </form>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>

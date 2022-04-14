@@ -14,7 +14,13 @@
     </div>
     <h1>Generar Exámenes</h1>
     <div class="form">
-        <form action="php/newExam.php" class="examForm" method="post">
+        <form action="php/newExam.php" class="examForm" method="post" onsubmit="return validations();">
+            <div>
+                <label for="document">Documento del paciente</label>
+                <div>
+                    <input type="text" name="document" id="document" pattern="^[0-9]*$" required>
+                </div>
+            </div>
             <div>
                 <label for="examType">Examen a realizar:</label>
             </div>
@@ -29,13 +35,12 @@
                 <input type="radio" name="examType" id="postprandial" value="postprandial">
             </div>
             <div>
-                <label for="document">Documento del paciente</label>
-                <div>
-                    <input type="text" name="document" id="document">
-                </div>
+                <label for="date">Fecha a realizar:</label>
+                <input type="date" name="date" id="eDate">
             </div>
             <input type="submit" value="enviar">
         </form>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
