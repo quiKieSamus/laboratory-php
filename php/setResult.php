@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <title>Generar examen</title>
+    <title>Emitir Resultado</title>
 </head>
 <body>
     <div>
@@ -20,25 +20,24 @@
 
 include('dbConfig/config.php');
 
-if(isset($_POST['examType']) && isset($_POST['document']) && isset($_POST['date'])){
-    $examType = $_POST['examType'];
-    $doc = $_POST['document'];
-    $fecha = $_POST['date'];
+if(isset($_POST['id']) && isset($_POST['result']) && $_POST['result'] != '') {
+    $id = $_POST['id'];
+    $resultado = $_POST['result'];
+    // echo $id . " " . $resultado;
 
-    // echo $examType . " " . $doc . " " . $fecha;
+    $sql = "UPDATE examen SET resultado='$resultado' WHERE id='$id'";
 
-    $sql = "INSERT INTO examen(documento, tipoExamen, fecha) VALUES ('$doc', '$examType', '$fecha')";
-
-    if(!$con){
-        die("Conexión fallida");
+    if(!$con) {
+        die("conexion fallida");
     } else {
         if($result = mysqli_query($con, $sql) == true) {
-            echo("<h1>Examen generado</h1>");
+            echo "<h1>Resultados ingresados correctamente</h1>";
+        } else {
+            echo "Algo salio mal";
         }
     }
 } else {
-    header("refresh: 1; url=../index.html");
-    echo "Faltaron datos por ingresar";
+    echo "ingrese un resultado valido";
 }
 
 ?>
