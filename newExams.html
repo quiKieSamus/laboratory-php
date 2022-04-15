@@ -11,10 +11,11 @@
     <div>
         <a href="index.html" class="navLink">Inicio</a>
         <a href="newPatient.html" class="navLink">Nuevo Paciente</a>
+        <a href="searchExam.html" class="navLink">Buscar examen</a>
     </div>
     <h1>Generar Exámenes</h1>
     <div class="form">
-        <form action="php/newExam.php" class="examForm" method="post" onsubmit="return validations();">
+        <form action="php/newExam.php" class="examForm form" method="post" onsubmit="return validations();">
             <div>
                 <label for="document">Documento del paciente</label>
                 <div>
@@ -36,7 +37,7 @@
             </div>
             <div>
                 <label for="date">Fecha a realizar:</label>
-                <input type="date" name="date" id="eDate">
+                <input type="date" name="date" id="fecha">
             </div>
             <input type="submit" value="enviar">
         </form>

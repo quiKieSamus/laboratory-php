@@ -1,4 +1,6 @@
 let docId = document.getElementById("document");
+let txtDate = document.getElementById("fecha");
+let txtBDay = document.getElementById("birthday");
 
 const validations = () => {
     if(docId.value.length > 8) {
@@ -21,6 +23,7 @@ console.log(year);
 console.log(month);
 let stringDay;
 let stringMonth;
+let stringYear = year.toString();
 
 if(day < 10) {
     stringDay = "0" + day.toString();
@@ -34,10 +37,13 @@ if (month < 10) {
     stringMonth = month.toString();
 }
 
-let today = year.toString() + "-" + stringMonth + "-" + stringDay;
+let today = `${stringYear}-${stringMonth}-${stringDay}`;
 
-let txtDate = document.getElementById("eDate");
-let txtBDay = document.getElementById("birthday");
-
-txtBDay.max = today;
-txtDate.min = today;
+if(window.location.href === "http://localhost/laboratory-php/newExams.html") {
+    console.log(txtDate);
+    txtDate.min = today;
+} 
+if(window.location.href === "http://localhost/laboratory-php/newPatient.html") {
+    console.log(txtBDay);
+    txtBDay.max = today;
+}

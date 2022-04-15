@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Laboratorio XD || Búsqueda de exámenes</title>
+</head>
+<body>
+    <div>
+        <a href="index.html" class="navLink">Inicio</a>
+        <a href="newPatient.html" class="navLink">Ingresar paciente</a>
+        <a href="newExams.html" class="navLink">Generar examen</a>
+    </div>
+    <h1>Búsqueda de exámenes</h1>
+    <div>
+        <form action="php/searchExam.php" class="form searchForm" method="post">
+            <div>
+                <label for="document">Ingrese un documento</label> <br>
+                <input type="text" name="documento" id="document" pattern="^[0-9]*$" required>
+            </div>
+            <input type="submit" value="buscar">
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
