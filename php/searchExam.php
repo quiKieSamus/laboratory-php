@@ -12,6 +12,7 @@
     <a href="../index.html" class="navLink">Inicio</a>
     <a href="../newPatient.html" class="navLink">Ingresar Paciente</a>
     <a href="../newExams.html" class="navLink">Generar examen</a>
+    <a href="../searchExam.html" class="navLink">Buscar examen</a>
 </div>
 
 <?php 
@@ -36,10 +37,15 @@ if(isset($_POST['documento'])){
                 <input type='text' name='document' value='$row[documento]' readonly></input>
                 <input type='text' name='examType' value='$row[tipoExamen]' readonly></input>
                 <input type='text' name='date' value='$row[fecha]' readonly></input>
-                <textarea col=10 name='result'>$row[resultado]</textarea>
+                <div>
+                    <label>Resultado</label> <br>
+                    <textarea col=10 name='result'>$row[resultado]</textarea>
+                </div>
                 <input type='submit' value='emitir resultado'></input>
                 </form>";
             }
+        } else {
+            echo "<h1>No hay exámenes futuros para este paciente</h1>";
         }
     }
 
