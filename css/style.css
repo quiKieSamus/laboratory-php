@@ -6,24 +6,64 @@ h1 {
     text-align: center;
 }
 
-.navLinkCont, .form {
+.navLinkCont {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    align-content: center;
     flex-wrap: wrap;
-    text-align: center;
+}
+
+.navLinkCont {
+    justify-content: center;
 }
 
 .navLink {
     text-decoration: none;
-    color: red;
-    border-radius: 5px;
     font-size: larger;
 }
 
 .navLink:hover {
+    border-radius: 5px;
+    padding: 20px;
     transition: 1s;
-    color: black;
-    border: red 1px;
+    border: 1px solid;
     text-decoration: underline;
+}
+
+.navItem {
+    margin: 20px auto;
+}
+
+.formItem {
+    margin: 5px;
+}
+
+input[type=date] {
+    width: 185px;
+}
+
+.cell {
+    width: 129px;
+}
+
+/*index.html*/
+
+.main {
+    color: white;
+}
+
+.add-patient, .search-exam, .exam-generation {
+    background-color: darkblue;
+    padding: 200px 100px;
+    border-radius: 50px;
+    font-size: larger;
 }
